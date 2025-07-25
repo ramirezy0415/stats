@@ -3,7 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
@@ -11,7 +11,12 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+  let array_length = getLength(numbers);
+  for (let index = 0; index < array_length; index++) {
+    sum += numbers[index];
+  }
+  return sum;
 }
 
 /**
@@ -19,7 +24,7 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  return getSum(numbers) / getLength(numbers);
 }
 
 /**
@@ -27,7 +32,16 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let min = numbers[0];
+  let array_length = getLength(numbers);
+  for (let index = 1; index < array_length; index++) {
+    let element = numbers[index];
+    if (element < min) {
+      min = element;
+    }
+  }
+  // return Math.min(...numbers);
+  return min;
 }
 
 /**
@@ -35,7 +49,17 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  // return Math.max(...numbers);
+  let max = numbers[0];
+  let array_length = getLength(numbers);
+  for (let index = 1; index < array_length; index++) {
+    let element = numbers[index];
+    if (element > max) {
+      max = element;
+    }
+  }
+  // return Math.max(...numbers);
+  return max;
 }
 
 /**
@@ -43,7 +67,7 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  return getMax(numbers) - getMin(numbers);
 }
 
 /**
@@ -51,7 +75,15 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  let even_arr = [];
+  let array_length = getLength(numbers);
+  for (let index = 0; index < array_length; index++) {
+    let element = numbers[index];
+    if (element % 2 === 0) {
+      even_arr.push(element);
+    }
+  }
+  return even_arr;
 }
 
 /**
@@ -59,7 +91,15 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  let odd_arr = [];
+  let array_length = getLength(numbers);
+  for (let index = 0; index < array_length; index++) {
+    let element = numbers[index];
+    if (element % 2 !== 0) {
+      odd_arr.push(element);
+    }
+  }
+  return odd_arr;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
